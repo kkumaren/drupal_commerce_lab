@@ -6,7 +6,7 @@ dependencies:
     - commerce_order.commerce_order_item_type.default
     - core.entity_form_mode.commerce_order_item.add_to_cart
   module:
-    - commerce_product
+    - custom_commerce
   enforced:
     module:
       - commerce_cart
@@ -19,11 +19,15 @@ bundle: default
 mode: add_to_cart
 content:
   purchased_entity:
-    type: commerce_product_variation_attributes
+    type: commerce_product_variation_radio
     weight: 0
-    settings: {  }
-    third_party_settings: {  }
     region: content
+    settings:
+      label_text: 'Please select'
+      hide_single: '1'
+      label_display_mode: default
+      label_display: 0
+    third_party_settings: {  }
 hidden:
   adjustments: true
   created: true

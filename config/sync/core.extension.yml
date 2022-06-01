@@ -3,6 +3,7 @@ _core:
 module:
   address: 0
   admin_toolbar: 0
+  admin_toolbar_tools: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -22,6 +23,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  custom_commerce: 0
   datetime: 0
   dblog: 0
   devel: 0
