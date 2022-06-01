@@ -29,6 +29,7 @@ web/sites/simpletest
 
 # Ignore local dev files
 /db*.sql.gz
+!db.sql.gz
 /phpunit.xml
 
 # Ignore Mac files
