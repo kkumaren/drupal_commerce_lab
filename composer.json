@@ -16,9 +16,12 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "drupal/commerce": "^2.30",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
-        "drupal/core-recommended": "^9.3"
+        "drupal/core-recommended": "^9.3",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/paragraphs": "^1.14"
     },
     "conflict": {
         "drupal/drupal": "*"
