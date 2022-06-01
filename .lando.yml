@@ -1,0 +1,43 @@
+name: drupal-commerce-lab
+recipe: drupal9
+config:
+  webroot: web
+  php: '7.4'
+  via: apache
+
+services:
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+    portforward: true
+
+proxy:
+  phpmyadmin:
+    - mysql.drupal-commerce-lab.lndo.site
+  mailhog:
+    - mail.drupal-commerce-lab.lndo.site
+
+tooling:
+  phpcs:
+    service: appserver
+    description: 'Run phpcs: lando phpcs'
+    cmd:
+      - 'phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md'
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node
+  yarn:
+    service: node
+  phpunit:
+    service: appserver
+    description: "Run PHP Unit tests: lando phpunit \nCan run --filter testFunctionName ClassNameTest /path/to/class"
+    cmd:
+      - /app/src/vendor/bin/phpunit --debug --configuration /app/src/phpunit-lando.xml
